@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://drive.google.com/file/d/1JtpcU1GZViSgXZCtfgoyjbKa8oF5dScu/view?usp=sharing">
+
+    <title>Pizza Base - <%= name %></title>
+</head>
+<body>
+    <style>
+        *{
+    padding: 0px;
+    margin: 0px;
+}
+:root{
+    --avenir: Harlow Solid Italic;
+}
+body{
+    background-color: #d8d8d8;
+}
+
+/* navigation_bar */
+
+.navigation_bar{
+    width: 100%;
+    height: 100%;
+}
+.main_ngbar{
+    position: fixed;
+    background-color: #000000;
+    height: 70px;
+    width: 99.2%;
+    border-radius: 15px;
+    margin: .4%;
+    box-shadow: 0px 0px 5px #000;
+}
+.cont_ngbar{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+.ngbar1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    width: 70px;
+}
+.ngbar_logo{
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    margin-left: 6px;
+}
+.ngbar2{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    height: 70px;
+    width: 100%;
+    margin-right: 0px;
+    flex-direction: row;
+    float: right;
+}
+.ngbar2buttons{
+    margin-right: 30px;
+}
+.navbtn{
+    background-color: #000000;
+    border: none;
+    padding: 8px;
+    transition: all .300s;
+}
+.navspan{
+    color: #fff;
+    font-size: 15px;
+    text-decoration: none;
+}
+.navbtn:active{
+    background-color: #181818;
+}
+.navname{
+    color: #fff;
+    font-size: 30px;
+    font-family: cursive;
+}
+.ngbarname{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    height: 70px;
+    width: 40%;
+    margin-right: 0px;
+    flex-direction: row;
+    margin-left: 2.8vw;
+}
+.errorbox{
+    position: fixed;
+    width: 100%;
+    height: fit-content;
+    bottom: -70px;
+    /*bottom: 50px;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .2s;
+}
+.errorcont{
+    background-color: #fffffffc;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px #a4a4a4;
+}
+.error{
+    font-family: calibri light;
+    color: #790000fe;
+    font-size: 15px;
+}
+.productboxmain{
+    margin-top: 0px;
+    padding-top: 70px;
+    height: 80vh;
+    width: 100vw;
+}
+.productboxcont{
+    background-color: #fff;
+    border-radius: 15px;
+    margin: 40px;
+    height: 95%;
+    padding: 30px;
+}
+.vars{
+    display: none;
+}
+.img{
+    border-radius: 10px;
+    width: 300px;
+}
+.productimg{
+    width: 300px;
+    height: 300px;
+}
+.details{
+    display: flex;
+    flex-direction: row;
+}
+.spans{
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    padding-left: 50px;
+}
+.name{
+    font-family: Calibri;
+    font-size: 40px;
+}
+.price{
+    font-family: Calibri;
+    font-size: 25px;
+    margin-top: 20px;
+}
+.descreption{
+    font-family: Calibri;
+    font-size: 18px;
+    margin-top: 20px;
+}
+.availability{
+    font-family: Calibri;
+    font-size: 22px;
+    margin-top: 20px;
+}
+.addons{
+    padding: 20px;
+    padding-top: 45px;
+}
+.frame{
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 200px;
+    height: 40px;
+    background-color: #000;
+    border-radius: 30px;
+    border: 2px solid #000;
+}
+.plus{
+    background-color: #fff;
+    height: 100%;
+    width: 40px;
+    border-radius: 5px;
+    border-top-right-radius: 27px;
+    border-bottom-right-radius: 27px;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    padding-right: 0px;
+    border: none;
+    font-family: Calibri;
+}
+.minus{
+    background-color: #fff;
+    height: 100%;
+    width: 40px;
+    border-radius: 5px;
+    margin-right: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    margin-right: 2px;
+    border: none;
+    font-family: Calibri;
+}
+.qtnum{
+    background-color: #000000;
+    height: 100%;
+    width: 120px;
+    border-radius: 5px;
+    border-top-left-radius: 27px;
+    border-bottom-left-radius: 27px;
+    margin-right: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    margin-right: 2px;
+    border: none;
+    color: #fff;
+    font-family: Calibri;
+}
+.labelqyt{
+    font-family: Calibri;
+    font-size: 15px;
+    padding-left: 20px;
+}
+.toppings{
+    padding-top: 35px;
+}
+.topscont{
+    padding: 10px;
+    padding-left: 5px;
+    display: flex;
+    flex-direction: row;
+}
+.tops{
+    border: 2px solid #000;
+    border-radius: 7px;
+    background-color: #fff;
+    height: 35px;
+    width: fit-content;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-family: Calibri;
+    font-size: 20px;
+    margin-left: 10px;
+    margin-bottom: 5px;
+    transition: all .2s;
+}
+.checkout{
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 170px;
+    height: 60px;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    background-color: #000;
+    color: #fff;
+}
+.size{
+    margin-left: 50px;
+}
+.qyt{
+    display: flex;
+    flex-direction: row;
+}
+.size{
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    width: 201px;
+    height: 40px;
+    background-color: #ffffff;
+    border-radius: 30px;
+    border: 2px solid #000;
+    overflow: hidden;
+    background-color: #fff;
+}
+.sizeopt{
+    border: none;
+    width: 67px;
+    background-color: #fff;
+    font-family: Calibri;
+    transition: all .2s;
+}
+
+
+
+
+
+.submit:active{
+    color: #fff;
+    background-color: #000;
+}
+
+
+
+@media screen and (max-width: 850px){
+    .main_ngbar{
+        position: fixed;
+        background-color: #000000;
+        height: 70px;
+        width: 98%;
+        border-radius: 15px;
+        margin: 1%;
+        box-shadow: 0px 0px 5px #000;
+    }
+    .ngbar2buttons{
+        margin-right: 20px;
+    }
+    .ngbar2{
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        height: 70px;
+        width: 80%;
+        margin-right: 0px;
+        flex-direction: row;
+        float: right;
+    }
+    .ngbar_logo{
+        width: 60px;
+        height: 60px;
+        border-radius: 10px;
+        margin-left: 0px;
+    }
+    .navname{
+        display: none;
+    }
+    .ngbarname{
+        display: none;
+    }
+    .smcont{
+        flex-direction: column;
+    }
+    .pt1{
+        padding-top: 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #000;
+        width: 100vw;
+        height: 40vh;
+    }
+    .pt2{
+        background-color: #f3f3f3;
+        width: 100vw;
+        height: 60vh;
+    }
+    .pt2cont{
+        height: 80%;
+    }
+    .logobig{
+        display: none;
+    }
+    .errorcont{
+        box-shadow: 0px 0px 30px #a4a4a4;
+    }
+    .details{
+        flex-direction: column;
+    }
+    .name{
+        font-size: 35px;
+    }
+    .spans{
+        padding-left: 0px;
+    }
+    .productimg{
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+    .productboxcont{
+        height: 140vh;
+    }
+    .descreption{
+        font-size: 15px;
+    }
+    .availability{
+        font-size: 18px;
+    }
+    .addons{
+        padding-top: 20px;
+    }
+    .topscont{
+        flex-direction: column;
+    }
+}
+    </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    <div class="navigation_bar" id="navigation_bar">
+        <div class="main_ngbar" id="main_ngbar">
+            <div class="cont_ngbar" id="cont_ngbar">
+                <div class="ngbar1" id="ngbar1">
+                    <img loading="lazy" class="ngbar_logo" id="ngbar_logo" src="/getmedia/logo1.png">
+                </div>
+                <div class="ngbarname" id="ngbarname">
+                    <span class="navname" id="navname">Pizza Base</span>
+                </div>
+                <div class="ngbar2" id="ngbar2">
+                    <div class="ngbar2buttons" id="ngbar2buttons">
+                        <button class="navbtn login" id="login">
+                            <a class="navspan loginbt" id="loginbt" href="/">Home</a>
+                        </button>
+                        <button class="navbtn register" id="register">
+                            <a class="navspan regbt" id="regbt" href="/register">Register</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="checkout">
+        <button class="checkout" onclick="checkout()">Buy Now</button>
+    </div>
+
+    <div class="productboxmain">
+        <div class="productboxcont">
+            <div class="details">
+                <div class="productimg"><img src="" id="imgprod" class="img"></div>
+                <div class="spans">
+                    <span class="name"><%= name %></span>
+                    <span class="price">₹<%= price %></span>
+                    <span class="descreption"><%= descreption %></span>
+                    <span class="availability" id="availability"></span>
+                </div>
+            </div>
+
+            <div class="addons">
+                <div class="qyt">
+                    <div>
+                        <span class="labelqyt">Quantity:</span>
+                        <div class="frame">
+                            <span class="qtnum" id="qytnum">1</span>
+                            <button class="minus" onclick="minus()">-</button>
+                            <button class="plus" onclick="plus()">+</button>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="labelqyt">Size:</span>
+                        <div class="size">
+                            <button act="false" onclick="setter('s')" id="s" class="sizeopt">S</button>
+                            <button act="false" onclick="setter('m')" id="m" class="sizeopt">M</button>
+                            <button act="false" onclick="setter('l')" id="l" class="sizeopt">L</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="toppings">
+                    <span class="labelqyt">Addons:</span><br>
+                    <div class="topscont">
+                        <button onclick="add('et')" class="tops" id="et" selected="false">Extra toppings</button>
+                        <button onclick="add('ec')" class="tops" id="ec" selected="false">Extra cheese</button>
+                        <button onclick="add('es')" class="tops" id="es" selected="false">Extra spicy</button>
+                        <button onclick="add('ls')" class="tops" id="ls" selected="false">Less spicy</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="errorbox" id="errorbox">
+        <div class="errorcont" id="errorcont">
+            <span class="error" id="error">
+                <!--murgi chira
+                tan 45 = 1-->
+            </span>
+        </div>
+    </div>
+
+    <div class="vars">
+        <span id="pcode"><%= code %></span>
+        <span id="pname"><%= name %></span>
+        <span id="pprice"><%= price %></span>
+        <span id="pdesc"><%= descreption %></span>
+        <span id="pavail"><%= availability %></span>
+    </div>
+
+<script>
+var code = document.getElementById("pcode").textContent
+var name = document.getElementById("pname").textContent
+var price = document.getElementById("pprice").textContent
+var descreption = document.getElementById("pdesc").textContent
+var availability = document.getElementById("pavail").textContent
+
+var avail_span = document.getElementById("availability")
+
+if(availability == 1){
+    avail_span.textContent = "Available"
+    avail_span.style.color = "#008e11"
+}else{
+    avail_span.textContent = "Currently Unavailable"
+    avail_span.style.color = "#8e0000"
+}
+
+function plus(){
+    document.getElementById("qytnum").textContent = Math.floor(document.getElementById("qytnum").textContent) + 1
+}
+
+function minus(){
+    if(Math.floor(document.getElementById("qytnum").textContent) > 1){
+        document.getElementById("qytnum").textContent = Math.floor(document.getElementById("qytnum").textContent) - 1
+    }
+}
+
+var size = {
+    size : "medium"
+}
+
+function setter(scale){
+    if(scale == "s"){
+        size.size = "small"
+        refreshsize()
+    }else if(scale == "m"){
+        size.size = "medium"
+        refreshsize()
+    }else if(scale == "l"){
+        size.size = "large"
+        refreshsize()
+    }else{
+        return
+    }
+}
+
+function refreshsize(){
+    if(size.size == "small"){
+        document.getElementById("s").style.backgroundColor = "#000"
+        document.getElementById("s").style.color = "#fff"
+        document.getElementById("s").setAttribute("act", "true")
+
+        document.getElementById("m").style.backgroundColor = "#fff"
+        document.getElementById("m").style.color = "#000"
+        document.getElementById("m").setAttribute("act", "false")
+
+        document.getElementById("l").style.backgroundColor = "#fff"
+        document.getElementById("l").style.color = "#000"
+        document.getElementById("l").setAttribute("act", "false")
+    }else if(size.size == "medium"){
+        document.getElementById("s").style.backgroundColor = "#fff"
+        document.getElementById("s").style.color = "#000"
+        document.getElementById("s").setAttribute("act", "false")
+
+        document.getElementById("m").style.backgroundColor = "#000"
+        document.getElementById("m").style.color = "#fff"
+        document.getElementById("m").setAttribute("act", "true")
+
+        document.getElementById("l").style.backgroundColor = "#fff"
+        document.getElementById("l").style.color = "#000"
+        document.getElementById("l").setAttribute("act", "false")
+    }else if(size.size == "large"){
+        document.getElementById("s").style.backgroundColor = "#fff"
+        document.getElementById("s").style.color = "#000"
+        document.getElementById("s").setAttribute("act", "false")
+
+        document.getElementById("m").style.backgroundColor = "#fff"
+        document.getElementById("m").style.color = "#000"
+        document.getElementById("m").setAttribute("act", "false")
+
+        document.getElementById("l").style.backgroundColor = "#000"
+        document.getElementById("l").style.color = "#fff"
+        document.getElementById("l").setAttribute("act", "true")
+    }else{
+        return
+    }
+}
+
+refreshsize()
+
+var addons = {
+    et : false,
+    ec : false,
+    es : false,
+    ls : false
+}
+
+function add(name){
+    if(document.getElementById(name).getAttribute("selected") == "false"){
+        document.getElementById(name).style.backgroundColor = "#000"
+        document.getElementById(name).style.color = "#fff"
+        document.getElementById(name).setAttribute("selected", "true")
+
+        if(name == "et"){
+            addons.et = true
+        }else if(name == "ec"){
+            addons.ec = true
+        }else if(name == "es"){
+            addons.es = true
+        }else if(name == "ls"){
+            addons.ls = true
+        }else{
+            console.log("no addons")
+        }
+    }else{
+        document.getElementById(name).style.backgroundColor = "#fff"
+        document.getElementById(name).style.color = "#000"
+        document.getElementById(name).setAttribute("selected", "false")
+        
+        if(name == "et"){
+            addons.et = false
+        }else if(name == "ec"){
+            addons.ec = false
+        }else if(name == "es"){
+            addons.es = false
+        }else if(name == "ls"){
+            addons.ls = false
+        }else{
+            console.log("no addons")
+        }
+    }
+}
+
+function otpgen(){
+    return Math.floor(Math.random() * 1000000);
+}
+
+function checkout(){
+    var qyt = document.getElementById("qytnum").textContent
+
+    var send = {
+        product_to_order : code,
+        order_qnty : qyt,
+        product_addons : addons,
+        product_size : size.size.toString(),
+        payment_method : "undefined",
+        payment_id : "undefined",
+        order_code : "undefined"
+    }
+}
+
+document.getElementById("imgprod").setAttribute("src", "/getmedia/"+code+".png")
+
+</script>
+</body>
+</html>

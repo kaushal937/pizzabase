@@ -1,0 +1,4 @@
+product code,
+product name,
+product type,
+product price

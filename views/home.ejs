@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://drive.google.com/file/d/1JtpcU1GZViSgXZCtfgoyjbKa8oF5dScu/view?usp=sharing">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Base - Home</title>
+</head>
+<body>
+
+    <style>
+        *{
+    padding: 0px;
+    margin: 0px;
+}
+:root{
+    --avenir: Harlow Solid Italic;
+}
+body{
+    background-color: #d8d8d8;
+}
+
+/* navigation_bar */
+
+.navigation_bar{
+    width: 100%;
+    height: 100%;
+}
+.main_ngbar{
+    position: fixed;
+    background-color: #000000;
+    height: 70px;
+    width: 99.2%;
+    border-radius: 15px;
+    margin: .4%;
+    box-shadow: 0px 0px 5px #000;
+    z-index: 8;
+}
+.cont_ngbar{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+.ngbar1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    width: 70px;
+}
+.ngbar_logo{
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    margin-left: 6px;
+}
+.ngbar2{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    height: 70px;
+    width: 100%;
+    margin-right: 0px;
+    flex-direction: row;
+    float: right;
+}
+.ngbar2buttons{
+    margin-right: 30px;
+}
+.navbtn{
+    background-color: #000000;
+    border: none;
+    padding: 8px;
+    transition: all .300s;
+}
+.navspan{
+    color: #fff;
+    font-size: 15px;
+    text-decoration: none;
+}
+.navbtn:active{
+    background-color: #181818;
+}
+.navname{
+    color: #fff;
+    font-size: 30px;
+    font-family: cursive;
+}
+.ngbarname{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    height: 70px;
+    width: 40%;
+    margin-right: 0px;
+    flex-direction: row;
+    margin-left: 2.8vw;
+}
+.errorbox{
+    position: fixed;
+    width: 100%;
+    height: fit-content;
+    bottom: -70px;
+    /*bottom: 50px;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .2s;
+}
+.errorcont{
+    background-color: #fffffffc;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px #a4a4a4;
+}
+.error{
+    font-family: calibri light;
+    color: #790000fe;
+    font-size: 15px;
+}
+.menutoggle{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 6;
+    width: 30px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000000f8;
+    box-shadow: 0px 0px 10px #000;
+    border: none;
+}
+.togglemenu{
+    background-color: #000000f8;
+    border: none;
+    color: #fff;
+    font-size: 26px;
+    transition: all .300s;
+}
+.menu{
+    height: 100vh;
+    position: fixed;
+    width: max-content;
+    top: 5px;
+    left: -310px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+    transition: all .3s;
+}
+.menumain{
+    background-color: #000000;
+    width: 310px;
+    height: 85vh;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #000;
+    margin-top: 9vh;
+}
+.close{
+    width: 100vw;
+    height: 100%;
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    z-index: 4;
+}
+.label{
+    font-size: 15px;
+    color: #ffffff;
+    font-family: calibri light;
+    margin-left: 5px;
+    margin-left: 10px;
+    margin: 3px;
+}
+.field{
+    background-color: #1d1d1d;
+    border: none;
+    height: 25px;
+    width: 200px;
+    border-radius: 6px;
+    outline: none;
+    color: #ffffff;
+    padding: 10px;
+    padding-left: 30px;
+    font-size: 13px;
+    margin-bottom: 30px;
+}
+.usersets{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 13px;
+    /* flex-direction: column; */
+}
+.contusersets{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #252525;
+    border: 10px;
+    padding: 20px;
+    border-radius: 13px;
+}
+.edit{
+    display: flex;
+    flex-direction: row;
+}
+.pencil{
+    color: #fff;
+    font-size: 20px;
+}
+.button{
+    border: none;
+    background-color: inherit;
+}
+.save{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.savebtn{
+    display: none;
+    color: #fff;
+    font-size: 17px;
+    background-color: #000;
+    border-radius: 10px;
+    width: max-content;
+    padding: 6px;
+    padding-left: 18px;
+    padding-right: 18px;
+}
+.logout{
+    width: 94%;
+    height: 40px;
+    margin-bottom: 5px;
+    position: absolute;
+    bottom: 30px;
+    padding: 3%;
+}
+.logoutcontainer{
+    background-color: #121212;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .100s;
+}
+.logoutbtn{
+    background-color: inherit;
+    border: none;
+    font-family: Calibri;
+    font-size: 20px;
+    color: #fc1010;
+}
+.logoutcontainer:active{
+    background-color: #401515;
+}
+.customercont{
+    margin: 20px;
+}
+.customer{
+    display: flex;
+    flex-direction: column;
+}
+.customerlabel{
+    padding-left: 10px;
+}
+.carelink{
+    color: #fff;
+    text-decoration: none;
+}
+.img_pizza{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pizzabanner{
+    width: 100%;
+    -webkit-mask-image: linear-gradient(#ffffff 50%, #ffffff00 100%);
+    mask-image: linear-gradient(#ffffff 50%, #ffffff00 100%);
+    overflow: hidden;
+}
+.prodimg{
+    width: 100px;
+    border-radius: 6px;
+}
+.mains{
+    width: 100%;
+    height: 700px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+    margin-top: 100px;
+}
+.mainscont{
+    width: fit-content;
+    min-width: 300px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.searchforprods{
+    width: 100%;
+    padding: 8px;
+    padding-left: 14px;
+    font-family: Calibri;
+    font-size: 20px;
+    border: 1px solid #000;
+    border-radius: 8px;
+    background-color: #a5a5a5;
+    margin-bottom: 15px;
+}
+.prods{
+    border: 5px solid #003082;
+    box-shadow: 0px 0px 20px #003082;
+    border-radius: 20px;
+    width: 380px;
+    height: 100%;
+    padding: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+}
+.prods::-webkit-scrollbar{
+    display: none;
+}
+.linearprods{
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    transition: all 300ms;
+}
+.linearprods:hover{
+    background-color: #e6e6e6;
+}
+.infoprods{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.name{
+    font-size: 18px;
+    font-family: calibri;
+}
+.price{
+    font-size: 14px;
+    font-family: calibri;
+}
+.imgborder{
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+}
+
+
+
+
+@media screen and (max-width: 850px){
+    .main_ngbar{
+        position: fixed;
+        background-color: #000000;
+        height: 70px;
+        width: 98%;
+        border-radius: 15px;
+        margin: 1%;
+        box-shadow: 0px 0px 5px #000;
+    }
+    .ngbar2buttons{
+        margin-right: 20px;
+    }
+    .ngbar2{
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        height: 70px;
+        width: 80%;
+        margin-right: 0px;
+        flex-direction: row;
+        float: right;
+    }
+    .ngbar_logo{
+        width: 60px;
+        height: 60px;
+        border-radius: 10px;
+        margin-left: 0px;
+    }
+    .navname{
+        display: none;
+    }
+    .ngbarname{
+        display: none;
+    }
+    .space{
+        height: 0px;
+    }
+    .pizzabanner{
+        width: 150%;
+        overflow: hidden;
+    }
+    .prods{
+    width: 300px;
+}
+}
+    </style>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="navigation_bar" id="navigation_bar">
+        <div class="main_ngbar" id="main_ngbar">
+            <div class="cont_ngbar" id="cont_ngbar">
+                <div class="ngbar1" id="ngbar1">
+                    <img class="ngbar_logo" id="ngbar_logo" src="/getmedia/logo1.png">
+                </div>
+                <div class="ngbarname" id="ngbarname">
+                    <span class="navname" id="navname">Pizza Base</span>
+                </div>
+                <div class="ngbar2" id="ngbar2">
+                    <div class="ngbar2buttons" id="ngbar2buttons">
+                        <!-- <button class="navbtn register" id="register">
+                            <a class="navspan regbt" id="regbt" href="/usercart">Cart</a>
+                        </button> -->
+                        <button class="navbtn register" id="register">
+                            <a class="navspan regbt" id="regbt" href="/register">Register</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="img_pizza">
+        <div class="contimgbanner">
+            <img src="/getmedia/21x9sample.jpg" class="pizzabanner">
+        </div>
+    </div>
+
+    <div class="mains">
+        <div class="mainscont">
+            <input type="text" placeholder="  Search for your day..." class="searchforprods" id="searchprods" onkeyup="search()">
+            
+            <div class="prods" id="prods">
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="close" id="close" onclick="toggleuserpanel()"></div>
+
+    </div>
+
+    <div class="menu" id="menu">
+        <div class="menumain" id="menumain">
+            <div class="usersets" id="usersets">
+                <div class="contusersets" id="contusersets">
+                    <span class="label">Name</span>
+                    <input type="text" class="field name" id="name" placeholder="  Name..." disabled>
+
+                    <span class="label">Address 1</span>
+                    <input type="text" class="field address1" id="address1" placeholder="  Address 1..." disabled>
+
+                    <span class="label">Address 2</span>
+                    <input type="text" class="field address2" id="address2" placeholder="  Address 2..." disabled>
+
+                    <div class="edit" id="edit">
+                        <button class="button" onclick="edit()"><span class="pencil" id="pencil"><i class="fa-solid fa-pen">-</i></span></button>
+                        <div class="save"><button class="button savebtn" id="savebtn" onclick="updateinfo()">Save</button></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="customer">
+                <div class="customercont" id="customercontem">
+                    <span class="label f">Email</span>
+                    <span class="customerlabel field" id="email"><a href="https://gmail.google.com" class="carelink">care@pizzamania.com</a></span>
+                </div>
+                <div class="customercont" id="customercontph">
+                    <span class="label f">Phone</span>
+                    <span class="customerlabel field" id="phone"><a href="" class="carelink">+91 98305-30583</a></span>
+                </div>
+                <div class="customercont" id="customerconttwit">
+                    <span class="label f">Twitter</span>
+                    <span class="customerlabel field" id="twitter"><a href="https://x.com" class="carelink">@pizzatest</a></span>
+                </div>
+            </div>
+
+            <button id="logoutbtn" class="logoutbtn" onclick="logout()">
+                <div class="logout" id="logout">
+                    <div class="logoutcontainer" id="logoutcontainer">
+                        Log Out</button>
+                    </div>
+                </div>
+            </button>
+        </div>
+    </div>
+
+    <button class="menutoggle" id="menutoggle" onclick="toggleuserpanel()">
+        <div class="togglemenu" id="togglemenu"><i class="fa-solid fa-arrow-right"></i></div>
+    </button>
+
+    <div class="errorbox" id="errorbox">
+        <div class="errorcont" id="errorcont">
+            <span class="error" id="error">
+                <!--murgi chira
+                tan 45 = 1-->
+            </span>
+        </div>
+    </div>
+
+<script>
+
+var naam;
+var add1;
+var add2;
+
+function logout(){
+    window.location.href = "/logout"
+}
+
+var a = 0
+
+function toggleuserpanel(){
+    if(a == 0){
+        closepanel()
+        return a=1
+    }else{
+        openpanel()
+        return a=0
+    }
+}
+
+var b = 1
+function edit(){
+    if(b == 0){
+        document.getElementById("savebtn").style.display = "none"
+
+        document.getElementById("name").style.backgroundColor = "#1d1d1d"
+        document.getElementById("address1").style.backgroundColor = "#1d1d1d"
+        document.getElementById("address2").style.backgroundColor = "#1d1d1d"
+
+        document.getElementById("name").setAttribute("disabled", true)
+        document.getElementById("address1").setAttribute("disabled", true)
+        document.getElementById("address2").setAttribute("disabled", true)
+
+        return b=1
+    }else{
+        document.getElementById("savebtn").style.display = "inline"
+
+        document.getElementById("name").style.backgroundColor = "#000"
+        document.getElementById("address1").style.backgroundColor = "#000"
+        document.getElementById("address2").style.backgroundColor = "#000"
+
+        document.getElementById("name").removeAttribute("disabled")
+        document.getElementById("address1").removeAttribute("disabled")
+        document.getElementById("address2").removeAttribute("disabled")
+
+        return b=0
+    }
+}
+
+fetch("/accessdata",{
+        method:"POST",
+        headers:{
+            "Content-type":"application/json"
+        },
+        body: JSON.stringify({"a" : "a"})
+    })
+    .then(response => response.json())
+    .then(function (x) {
+        naam = x["naam"]
+        add1 = x["add1"]
+        add2 = x["add2"]
+
+        document.getElementById("name").value = naam
+        document.getElementById("address1").value = add1
+        document.getElementById("address2").value = add2
+    })
+
+
+
+
+
+    fetch("/getproducts",{
+        method:"POST",
+        headers:{
+            "Content-type":"application/json"
+        },
+        body: JSON.stringify({"a" : "a"})
+    })
+    .then(response => response.json())
+    .then(function (x) {
+        x.forEach((element) => {
+            const markup = `<li class="linearprods" onclick="openpurchasebox('${element["product_code"]}', '${element["product_name"]}', '${element["product_price"]}', '${element["product_descrep"]}', '${element["product_avail"]}')"><div class="imgborder"><img src="/getmedia/${element["product_code"]}.png" alt="Some image" class="prodimg" id="prodimg"></div><div class="infoprods"><span class="name">${element["product_name"]}</span><span class="price">₹${element["product_price"]}</span></div></li>`
+            const prodList = document.getElementById("prods")
+            prodList.insertAdjacentHTML('beforeend', markup)
+        });
+    })
+
+
+function openpurchasebox(pcode, pname, pprice, pdesc, pavail){
+    var slashproducts = "/products?code="+pcode+"&name="+pname+"&price="+pprice+"&descreption="+pdesc+"&availability="+pavail
+
+    window.location.href = slashproducts
+}
+
+
+function updateinfo(){
+    var a = document.getElementById("name").value;
+    
+    updateadd1()
+    updateadd2()
+    updatename()
+}
+
+//defines
+const sleep = async (milliseconds) => {
+    await new Promise(resolve => {
+        return setTimeout(resolve, milliseconds);
+    });
+};
+
+function showerr(){
+    document.getElementById("errorbox").style.bottom = "50px";
+}
+
+function hiderr(){
+    document.getElementById("errorbox").style.bottom = "-75px";
+}
+
+function closepanel(){
+    if(window.screen.width < 850){
+        document.getElementById("menu").style.left = "-310px"
+    }else{
+        document.getElementById("menu").style.left = "-310px"
+    }
+    document.getElementById("togglemenu").style.transform = "rotate(0deg)"
+    document.getElementById("close").style.display = "none"
+}
+
+function openpanel(){
+    if(window.screen.width < 850){
+        document.getElementById("menu").style.left = "30px"
+    }else{
+        document.getElementById("menu").style.left = "40px"
+    }
+    document.getElementById("togglemenu").style.transform = "rotate(-180deg)"
+    document.getElementById("close").style.display = "inline"
+}
+
+function updatename(){
+    var a = document.getElementById("name")
+    var obj = {
+        a:a.value
+    }
+
+    if(a.value != naam){
+        console.log(0)
+        fetch("/updatecreds", {
+            method: "POST",
+            headers: {
+                "Content-type" : "application/json",
+                "x-typeofmodification" : "name"
+            },
+            body: JSON.stringify(obj)
+        }).then(response => response.json())
+        .then(async(x)=>{
+            var msg = x["error"]
+
+            document.getElementById("error").textContent = msg;
+            showerr()
+            await sleep(5000)
+            hiderr()
+        })
+    }else{
+        return
+    }
+}
+
+function updateadd1(){
+    var b = document.getElementById("address1")
+    var obj = {
+        a:b.value
+    }
+    if(b.value != add1){
+        fetch("/updatecreds", {
+            method: "POST",
+            headers: {
+                "Content-type" : "application/json",
+                "x-typeofmodification" : "addr1"
+            },
+            body: JSON.stringify(obj)
+        }).then(response => response.json())
+        .then(async(x)=>{
+            var msg = x["error"]
+
+            document.getElementById("error").textContent = msg;
+            showerr()
+            await sleep(5000)
+            hiderr()
+        })
+    }else{
+        return
+    }
+}
+
+function updateadd2(){
+    var c = document.getElementById("address2")
+    var obj = {
+        a:c.value
+    }
+
+    if(c.value != add2){
+        fetch("/updatecreds", {
+            method: "POST",
+            headers: {
+                "Content-type" : "application/json",
+                "x-typeofmodification" : "addr2"
+            },
+            body : JSON.stringify(obj)
+        }).then(response => response.json())
+        .then(async(x)=>{
+            var msg = x["error"]
+
+            document.getElementById("error").textContent = msg;
+            showerr()
+            await sleep(5000)
+            hiderr()
+        })
+    }else{
+        return
+    }
+}
+
+function search(){
+    let inp = document.getElementById("searchprods").value.toUpperCase();
+
+    let list = document.getElementById("prods");
+
+    let sl = list.getElementsByTagName("li");
+
+    for(var i=0; i<sl.length; i++){
+        let a = sl[i].getElementsByClassName("name")[0];
+
+        let tContent = a.textContent;
+
+        if(tContent.toUpperCase().indexOf(inp) > -1){
+            sl[i].style.display = "";
+        }else{
+            sl[i].style.display = "none";
+        }
+    }
+}
+    </script>
+
+</body>
+</html>

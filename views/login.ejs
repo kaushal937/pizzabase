@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://drive.google.com/file/d/1JtpcU1GZViSgXZCtfgoyjbKa8oF5dScu/view?usp=sharing">
+
+    <title>Pizza Base - Login</title>
+</head>
+<body>
+    <style>
+        *{
+    padding: 0px;
+    margin: 0px;
+}
+:root{
+    --avenir: Harlow Solid Italic;
+}
+body{
+    background-color: #d8d8d8;
+}
+
+/* navigation_bar */
+
+.navigation_bar{
+    width: 100%;
+    height: 100%;
+}
+.main_ngbar{
+    position: fixed;
+    background-color: #000000;
+    height: 70px;
+    width: 99.2%;
+    border-radius: 15px;
+    margin: .4%;
+    box-shadow: 0px 0px 5px #000;
+}
+.cont_ngbar{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+.ngbar1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    width: 70px;
+}
+.ngbar_logo{
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    margin-left: 6px;
+}
+.ngbar2{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    height: 70px;
+    width: 100%;
+    margin-right: 0px;
+    flex-direction: row;
+    float: right;
+}
+.ngbar2buttons{
+    margin-right: 30px;
+}
+.navbtn{
+    background-color: #000000;
+    border: none;
+    padding: 8px;
+    transition: all .300s;
+}
+.navspan{
+    color: #fff;
+    font-size: 15px;
+    text-decoration: none;
+}
+.navbtn:active{
+    background-color: #181818;
+}
+.navname{
+    color: #fff;
+    font-size: 30px;
+    font-family: cursive;
+}
+.ngbarname{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    height: 70px;
+    width: 40%;
+    margin-right: 0px;
+    flex-direction: row;
+    margin-left: 2.8vw;
+}
+.signinmain{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+.smcont{
+    display: flex;
+    flex-direction: row;
+}
+.pt1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    width: 400px;
+    height: 500px;
+}
+.pt2{
+    background-color: #f3f3f3;
+    width: 400px;
+    height: 500px;
+}
+.pt1cont{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.loginbig{
+    color: #fff;
+    font-size: 60px;
+    font-family: calibri;
+}
+.confirmationifaccexists{
+    color: #fff;
+    font-size: 20px;
+    font-family: calibri light;
+}
+.create{
+    color: #fff;
+    font-family: calibri light;
+}
+.forgotpass{
+    margin-top: 20px;
+    text-decoration: none;
+    padding: 10px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+}
+.pt2cont{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.label{
+    font-size: 15px;
+    color: #000000;
+    font-family: calibri light;
+    margin-left: 5px;
+}
+.field{
+    background-color: #dfdfdf;
+    border: none;
+    height: 34px;
+    width: 240px;
+    border-radius: 6px;
+    outline: none;
+    color: #000;
+    padding: 10px;
+    padding-left: 30px;
+    font-size: 15px;
+}
+.logobig{
+    color: #161616;
+    font-size: 40px;
+    font-family: cursive;
+    margin-top: -50px;
+    margin-bottom: 40px;
+}
+.submit{
+    width: 100%;
+    border-radius: 7px;
+    margin-top: 30px;
+    border: 2px solid #000;
+    font-family: calbri light;
+    font-size: 18px;
+    padding: 10px;
+    transition: all .08s;
+}
+.errorbox{
+    position: fixed;
+    width: 100%;
+    height: fit-content;
+    bottom: -70px;
+    /*bottom: 50px;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .2s;
+}
+.errorcont{
+    background-color: #fffffffc;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px #a4a4a4;
+}
+.error{
+    font-family: calibri light;
+    color: #790000fe;
+    font-size: 15px;
+}
+
+
+
+.submit:active{
+    color: #fff;
+    background-color: #000;
+}
+
+
+
+@media screen and (max-width: 850px){
+    .main_ngbar{
+        position: fixed;
+        background-color: #000000;
+        height: 70px;
+        width: 98%;
+        border-radius: 15px;
+        margin: 1%;
+        box-shadow: 0px 0px 5px #000;
+    }
+    .ngbar2buttons{
+        margin-right: 20px;
+    }
+    .ngbar2{
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        height: 70px;
+        width: 80%;
+        margin-right: 0px;
+        flex-direction: row;
+        float: right;
+    }
+    .ngbar_logo{
+        width: 60px;
+        height: 60px;
+        border-radius: 10px;
+        margin-left: 0px;
+    }
+    .navname{
+        display: none;
+    }
+    .ngbarname{
+        display: none;
+    }
+    .smcont{
+        flex-direction: column;
+    }
+    .pt1{
+        padding-top: 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #000;
+        width: 100vw;
+        height: 40vh;
+    }
+    .pt2{
+        background-color: #f3f3f3;
+        width: 100vw;
+        height: 60vh;
+    }
+    .pt2cont{
+        height: 80%;
+    }
+    .logobig{
+        display: none;
+    }
+    .errorcont{
+        box-shadow: 0px 0px 30px #a4a4a4;
+    }
+}
+    </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    <div class="navigation_bar" id="navigation_bar">
+        <div class="main_ngbar" id="main_ngbar">
+            <div class="cont_ngbar" id="cont_ngbar">
+                <div class="ngbar1" id="ngbar1">
+                    <img loading="lazy" class="ngbar_logo" id="ngbar_logo" src="/getmedia/logo1.png">
+                </div>
+                <div class="ngbarname" id="ngbarname">
+                    <span class="navname" id="navname">Pizza Base</span>
+                </div>
+                <div class="ngbar2" id="ngbar2">
+                    <div class="ngbar2buttons" id="ngbar2buttons">
+                        <button class="navbtn login" id="login">
+                            <a class="navspan loginbt" id="loginbt" href="/">Login</a>
+                        </button>
+                        <button class="navbtn register" id="register">
+                            <a class="navspan regbt" id="regbt" href="/register">Register</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="signinmain" id="signinmain">
+        <div class="smcont" id="smcont">
+            <div class="pt1" id="pt1">
+                <div class="pt1cont" id="pt1cont">
+                    <span class="loginbig" id="loginbig">
+                        Login
+                    </span>
+                    <span class="confirmationifaccexists" id="confirmationifaccexists">
+                        Don't have an account?  <a href="/register" class="create" id="create">Create!</a>
+                    </span>
+                    <a onclick="forgotpass()" class="create forgotpass" id="forgotpass">Forgot Your Password?</a>
+                </div>
+            </div>
+            <div class="pt2" id="pt2">
+                <div class="pt2cont" id="pt2cont">
+                    <div class="logobig" id="logobig">
+                        Pizza Mania
+                    </div>
+                    <div class="user">
+                        <span class="usernamelabel label" id="usernamelabel">
+                            Username
+                        </span>
+                        <br>
+                        <input type="text" class="username field" id="usernamefield" placeholder="  Enter Your Username">
+                    </div>
+                        <br>
+
+                    <div class="pass">
+                        <span class="passlabel label" id="passlabel">
+                            Password
+                        </span>
+                        <br>
+                        <input type="password" class="password field" id="passwordfield" placeholder="  Enter your Password">
+
+                        <br>
+                        <button class="submit" id="submit" onclick="check()">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="errorbox" id="errorbox">
+        <div class="errorcont" id="errorcont">
+            <span class="error" id="error">
+                <!--murgi chira
+                tan 45 = 1-->
+            </span>
+        </div>
+    </div>
+
+<script>
+
+
+
+const sleep = async (milliseconds) => {
+    await new Promise(resolve => {
+        return setTimeout(resolve, milliseconds);
+    });
+};
+
+function showerr(){
+    document.getElementById("errorbox").style.bottom = "50px";
+}
+
+function hiderr(){
+    document.getElementById("errorbox").style.bottom = "-75px";
+}
+
+function forgotpass(){
+    window.location.href = "/changepass"
+}
+
+// async function setcookie(){
+//     document.cookie = "nsid=_7kaushal"
+// }
+
+// function logoutall(){
+    // fetch("/logout-everywhere", {
+        // method : "POST",
+        // headers : {
+            // "Content-type" : "application/json"
+        // },
+        // body : {}
+    // })
+// }
+
+window.addEventListener("keypress", (e)=>{
+    var a = e.key.toUpperCase()
+    if(a == "ENTER"){
+        check()
+    }
+})
+
+function check(){
+    var a = document.getElementById("usernamefield")
+    var b = document.getElementById("passwordfield")
+
+    var obj = {
+        a:a.value,
+        b:b.value
+    }
+        
+    fetch("/authenticate",{
+        method:"POST",
+        headers:{
+            "Content-type":"application/json"
+        },
+        body : JSON.stringify(obj)
+    })
+    .then(response => response.json())
+    .then(async function (x) {
+        err = x["error"]
+        if(err == "cango"){
+            window.location.href = "/"
+        }else{
+            document.getElementById("error").textContent = err;
+            showerr()
+            await sleep(5000)
+            hiderr()
+        }
+    })
+}
+
+    </script>
+</body>
+</html>

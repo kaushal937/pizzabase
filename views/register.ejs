@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://drive.google.com/file/d/1JtpcU1GZViSgXZCtfgoyjbKa8oF5dScu/view?usp=sharing">
+
+    <title>Pizza Base - Register</title>
+</head>
+<body>
+    <style>
+*{
+    padding: 0px;
+    margin: 0px;
+}
+:root{
+    --avenir: Harlow Solid Italic;
+}
+body{
+    background-color: #d8d8d8;
+}
+
+/* navigation_bar */
+
+.navigation_bar{
+    width: 100%;
+    height: 100%;
+}
+.main_ngbar{
+    position: fixed;
+    background-color: #000000;
+    height: 70px;
+    width: 99.2%;
+    border-radius: 15px;
+    margin: .4%;
+    box-shadow: 0px 0px 5px #000;
+}
+.cont_ngbar{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+.ngbar1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    width: 70px;
+}
+.ngbar_logo{
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    margin-left: 6px;
+}
+.ngbar2{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    height: 70px;
+    width: 100%;
+    margin-right: 0px;
+    flex-direction: row;
+    float: right;
+}
+.ngbar2buttons{
+    margin-right: 30px;
+}
+.navbtn{
+    background-color: #000000;
+    border: none;
+    padding: 8px;
+    transition: all .300s;
+}
+.navspan{
+    color: #fff;
+    font-size: 15px;
+    text-decoration: none;
+}
+.navbtn:active{
+    background-color: #181818;
+}
+.navname{
+    color: #fff;
+    font-size: 30px;
+    font-family: cursive;
+}
+.ngbarname{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    height: 70px;
+    width: 40%;
+    margin-right: 0px;
+    flex-direction: row;
+    margin-left: 2.8vw;
+}
+.errorbox{
+    position: fixed;
+    width: 100%;
+    height: fit-content;
+    bottom: -70px;
+    /*bottom: 50px;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .2s;
+}
+.errorcont{
+    background-color: #fffffffc;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px #a4a4a4;
+}
+.error{
+    font-family: calibri light;
+    color: #790000fe;
+    font-size: 15px;
+}
+.signinmain{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+.smcont{
+    display: flex;
+    flex-direction: row;
+}
+.pt1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    width: 400px;
+    height: 500px;
+}
+.pt2{
+    background-color: #f3f3f3;
+    width: 400px;
+    height: 500px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.pt1cont{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.loginbig{
+    color: #fff;
+    font-size: 60px;
+    font-family: calibri;
+}
+.confirmationifaccexists{
+    color: #fff;
+    font-size: 20px;
+    font-family: calibri light;
+}
+.login{
+    color: #fff;
+}
+.forgotpass{
+    margin-top: 20px;
+    text-decoration: none;
+    padding: 10px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+}
+.pt2cont{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 40%;
+    padding: 20px;
+    overflow: hidden;
+}
+.label{
+    font-size: 15px;
+    color: #000000;
+    font-family: calibri light;
+    margin-left: 5px;
+    margin-left: 10px;
+    margin: 3px;
+}
+.field{
+    background-color: #dfdfdf;
+    border: none;
+    height: 34px;
+    width: 240px;
+    border-radius: 6px;
+    outline: none;
+    color: #000;
+    padding: 10px;
+    padding-left: 30px;
+    font-size: 15px;
+    margin-bottom: 30px;
+}
+.name{
+    margin-bottom: 140px;
+}
+.email{
+    margin-bottom: 230px;
+}
+.conpassword{
+    margin-bottom: 0px;
+}
+.pt2subcont{
+    display: flex;
+    flex-direction: column;
+    transition: all .200s;
+}
+.nextper{
+    padding: 10px;
+}
+.np{
+    background-color: #f3f3f3;
+    border: none;
+    color: #474747;
+    padding: 10px;
+    font-size: 40px;
+    font-family: calibri Bold;
+}
+.np{
+    margin: 10px;
+}
+.submit{
+    width: 100%;
+    border-radius: 7px;
+    margin-top: 10px;
+    border: 2px solid #000;
+    font-family: calbri light;
+    font-size: 18px;
+    padding: 10px;
+    width: 280px;
+    transition: all .08s;
+}
+.seepass{
+    background-color: #ffffff00;
+    border: none;
+    margin-top: 0px;
+    display: none;
+    margin: 10px;
+}
+.uppercont{
+    display: flex;
+    width: 100%;
+    height: 30px;
+    justify-content: end;
+}
+.hideshow{
+    color: #474747;
+    font-size: 20px;
+}
+.otpcont{
+    bottom: -35vh;  /* 35*/
+    left: 25vw;
+    position: fixed;
+    width: 50vw;
+    height: 30vh;
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 1s;
+}
+.otpbox{
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    background-color: #00000000; /*#0000007d*/
+}
+.enterotp{
+    font-family: calibri;
+    font-size: 20px;
+}
+.otp{
+    background-color: #dfdfdf;
+    border: none;
+    height: 34px;
+    width: 180px;
+    border-radius: 6px;
+    outline: none;
+    color: #000;
+    padding: 10px;
+    padding-left: 30px;
+    font-size: 15px;
+    margin-top: 20px;
+    -webkit-inner-spin-button: none;
+}
+.submitotp{
+    border-radius: 7px;
+    margin-top: 30px;
+    border: 2px solid #000;
+    font-family: calbri light;
+    font-size: 18px;
+    padding: 10px;
+    width: 250px;
+    transition: all .08s;
+    background-color: #fff;
+}
+.submitotp:active{
+    background-color: #000;
+}
+.close{
+    border-radius: 7px;
+    margin-top: 30px;
+    border: 2px solid #000;
+    font-family: calbri light;
+    font-size: 13px;
+    padding: 5px;
+    width: 100px;
+    transition: all .08s;
+    background-color: #fff;
+}
+
+
+
+
+
+@media screen and (max-width: 850px){
+    .main_ngbar{
+        position: fixed;
+        background-color: #000000;
+        height: 70px;
+        width: 98%;
+        border-radius: 15px;
+        margin: 1%;
+        box-shadow: 0px 0px 5px #000;
+    }
+    .ngbar2buttons{
+        margin-right: 20px;
+    }
+    .ngbar2{
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        height: 70px;
+        width: 80%;
+        margin-right: 0px;
+        flex-direction: row;
+        float: right;
+    }
+    .ngbar_logo{
+        width: 60px;
+        height: 60px;
+        border-radius: 10px;
+        margin-left: 0px;
+    }
+    .navname{
+        display: none;
+    }
+    .ngbarname{
+        display: none;
+    }
+    .smcont{
+        flex-direction: column;
+    }
+    .pt1{
+        padding-top: 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #000;
+        width: 100vw;
+        height: 35vh;
+    }
+    .pt2{
+        background-color: #f3f3f3;
+        width: 100vw;
+        height: 65vh;
+    }
+    .logobig{
+        display: none;
+    }
+    .errorcont{
+        box-shadow: 0px 0px 30px #a4a4a4;
+    }
+    .pt2cont{
+        margin-top: -30px;
+    }
+    .hideshow{
+        font-size: 25px;
+    }
+    .otpcont{
+        bottom: -100vh; /*35vh*/
+        left: 10vw;
+        position: fixed;
+        width: 80vw;
+        height: 30vh;
+        border: 1px solid #000000;
+        border-radius: 20px;
+        transition: all 0.5s;
+    }
+    .otpbox{
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0px;
+    }
+    .enterotp{
+        font-family: calibri;
+        font-size: 16px;
+    }
+    .otp{
+        background-color: #dfdfdf;
+        border: none;
+        height: 34px;
+        width: 180px;
+        border-radius: 6px;
+        outline: none;
+        color: #000;
+        padding: 10px;
+        padding-left: 30px;
+        font-size: 15px;
+        margin-top: 15px;
+    }
+}
+    </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="navigation_bar" id="navigation_bar">
+        <div class="main_ngbar" id="main_ngbar">
+            <div class="cont_ngbar" id="cont_ngbar">
+                <div class="ngbar1" id="ngbar1">
+                    <img class="ngbar_logo" id="ngbar_logo" src="/getmedia/logo1.png">
+                </div>
+                <div class="ngbarname" id="ngbarname">
+                    <span class="navname" id="navname">Pizza Base</span>
+                </div>
+                <div class="ngbar2" id="ngbar2">
+                    <div class="ngbar2buttons" id="ngbar2buttons">
+                        <button class="navbtn login" id="login">
+                            <a class="navspan" id="loginbt" href="/">Login</a>
+                        </button>
+                        <button class="navbtn register" id="register">
+                            <a class="navspan" id="regbt" href="/register">Register</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="signinmain" id="signinmain">
+        <div class="smcont" id="smcont">
+            <div class="pt1" id="pt1">
+                <div class="pt1cont" id="pt1cont">
+                    <span class="loginbig" id="loginbig">
+                        Register
+                    </span>
+                    <span class="confirmationifaccexists" id="confirmationifaccexists">
+                        Already have an account?  <a href="/" class="login" id="login">Login!</a>
+                    </span>
+                </div>
+            </div>
+            <div class="pt2" id="pt2">
+                <div class="pt2cont" id="pt2cont">
+                    <div class="pt2subcont" id="pt2subcont">
+                        <span class="label">Username</span>
+                        <input type="text" class="field username" id="username" placeholder="  Username">
+                        <span class="label">Name</span>
+                        <input type="text" class="field name" id="name" placeholder="  Name">
+                        <span class="label">Email</span>
+                        <input type="email" class="field email" id="email" placeholder="  Email">
+                        <span class="label">Password</span>
+                        <input type="password" class="field password" id="password" placeholder="  Password">
+                        <span class="label">Confirm Password</span>
+                        <input type="password" class="field conpassword" id="conpassword" placeholder="  Re-enter Password">
+                        <div class="uppercont">
+                            <button class="seepass" id="seepass" onclick="hideshow()"><i class="hideshow fa-solid fa-eye"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <button class="submit" onclick="post()">Submit</button>
+                <div class="nextper" id="nextper">
+                    <button class="np" onclick="changeviewp()"><i class="fa-solid fa-arrow-left"></i></button>
+                    <button class="np" onclick="changeviewn()"><i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="errorbox" id="errorbox">
+        <div class="errorcont" id="errorcont">
+            <span class="error" id="error">
+                <!--murgi chira
+                tan 45 = 1-->
+            </span>
+        </div>
+    </div>
+
+    <div class="otpbox" id="otpbox">
+        <div class="otpcont" id="otpcont">
+            <span class="enterotp" id="enterotp">
+                Enter the otp sent to your mail
+            </span>
+            <input type="number" placeholder="  Enter Otp" class="otp" id="otp">
+            <button onclick="submitotp()" class="submitotp" id="submitotp">Submit</button>
+            <button onclick="hideotp()" class="close" id="close">Close</button>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+var p = 0
+function changeviewn(){
+    if(p>-1 && p<2){
+        p += 1
+        change()
+    }else{
+        return
+    }
+}
+
+const sleep = async (milliseconds) => {
+    await new Promise(resolve => {
+        return setTimeout(resolve, milliseconds);
+    });
+};
+
+function changeviewp(){
+    if(p>0 && p<3){
+        p -= 1
+        change()
+    }else{
+        return
+    }
+}
+function change(a){
+    if(p == 0){
+        document.getElementById("pt2subcont").style.marginTop = "0px"
+    }
+    if(p == 1){
+        document.getElementById("pt2subcont").style.marginTop = "-327px"
+    }
+    if(p == 2){
+        document.getElementById("pt2subcont").style.marginTop = "-638px"
+    }
+    if (p == 2){
+        document.getElementById("seepass").style.display = "inline"    
+    }
+    else{
+        document.getElementById("seepass").style.display = "none"
+    }
+}
+
+var a;
+function hideshow(){
+    if(a == 0){
+        document.getElementById("password").setAttribute("type", "password")
+        document.getElementById("conpassword").setAttribute("type", "password")
+        document.getElementById("seepass").innerHTML = '<i class="hideshow fa-solid fa-eye"></i>'
+        return a=1
+    }
+    else{
+        document.getElementById("password").setAttribute("type", "text")
+        document.getElementById("conpassword").setAttribute("type", "text")
+        document.getElementById("seepass").innerHTML = '<i class="hideshow fa-solid fa-eye-slash"></i>'
+        return a=0
+    }
+}
+
+function showotp(){
+    document.getElementById("otpbox").style.display = "inline"
+    document.getElementById("otpbox").style.backgroundColor = "#0000007d"
+    document.getElementById("otpcont").style.bottom = "35vh"
+}
+
+function hideotp(){
+    document.getElementById("otpbox").style.display = "none"
+    document.getElementById("otpbox").style.backgroundColor = "#00000000"
+    document.getElementById("otpcont").style.bottom = "-100vh"
+}
+
+function showerr(){
+    document.getElementById("errorbox").style.bottom = "50px";
+}
+
+function hiderr(){
+    document.getElementById("errorbox").style.bottom = "-75px";
+}
+
+function post(){
+    var a = document.getElementById("username")
+    var b = document.getElementById("name")
+    var c = document.getElementById("email")
+    var d = document.getElementById("password")
+    var e = document.getElementById("conpassword")
+
+    var obj = {
+        a:a.value,
+        b:b.value,
+        c:c.value,
+        d:d.value,
+        e:e.value
+    }
+
+    fetch("/registeracc",{
+        method:"POST",
+        headers:{
+            "Content-type":"application/json"
+        },
+        body : JSON.stringify(obj)
+    }
+).then(response => response.json())
+.then(function (x) {
+    err = x["error"]
+    if(err == "otp"){
+        showotp()
+    }else{
+        document.getElementById("error").textContent = err;
+        showerr()
+    }
+})
+}
+
+function submitotp(){
+    var a = document.getElementById("username")
+    var b = document.getElementById("name")
+    var c = document.getElementById("email")
+    var d = document.getElementById("password")
+    var e = document.getElementById("conpassword")
+    var f = document.getElementById("otp")
+
+    var obj = {
+        a:a.value,
+        b:b.value,
+        c:c.value,
+        d:d.value,
+        e:e.value,
+        f:f.value
+    }
+
+    fetch("/otp",{
+        method:"POST",
+        headers:{
+            "Content-type":"application/json"
+        },
+        body : JSON.stringify(obj)
+    }
+).then(response => response.json())
+.then(async function (x) {
+    err = x["error"]
+    if(err == "otp"){
+        showotp()
+    }else{
+        if(err == "Registration succesful!"){
+            document.getElementById("error").style.color = "#0bcc35";
+            document.getElementById("error").textContent = err;
+            showerr()
+            await sleep(5000)
+            hiderr()
+            hideotp()
+            loginme()
+        }else{
+            document.getElementById("error").style.color = "#790000fe";
+            document.getElementById("error").textContent = err;
+            showerr()
+            await sleep(5000)
+            hiderr()
+        }
+    }
+})
+}
+
+function loginme(){
+    check()
+}
+
+function check(){
+    var a = document.getElementById("usernamefield")
+    var b = document.getElementById("passwordfield")
+
+    var obj = {
+        a:a.value,
+        b:b.value
+    }
+        
+    fetch("/authenticate",{
+        method:"POST",
+        headers:{
+            "Content-type":"application/json"
+        },
+        body : JSON.stringify(obj)
+    })
+    .then(response => response.json())
+    .then(async function (x) {
+        err = x["error"]
+        if(err == "cango"){
+            window.location.href = "/"
+        }else{
+            document.getElementById("error").textContent = err;
+            showerr()
+            await sleep(5000)
+            hiderr()
+        }
+    })
+}
+
+    </script>
+
+
+
+
+
+
+    <script src="https://kit.fontawesome.com/de3571ba3b.js" crossorigin="anonymous"></script>
+</body>
+</html>

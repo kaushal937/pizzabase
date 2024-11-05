@@ -1,0 +1,4 @@
+node_modules
+.env
+models/words_dictionary.json
+build
